@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WILD EARTH | Explore Nature</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="logo">WILD<span>EARTH.</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#categories">Nature</a>
+        </nav>
+
+        <div class="nav-text">EXPLORE THE PLANET ✦</div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="small-heading">DISCOVER THE BEAUTY OF OUR PLANET</p>
+
+            <h1>Explore the<br><span>Wild World.</span></h1>
+
+            <p class="hero-description">
+                Discover breathtaking landscapes, magical forests,
+                beautiful oceans and extraordinary destinations
+                from every corner of the world.
+            </p>
+
+            <a href="#destinations" class="explore-btn">
+                Explore Destinations →
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200"
+                 alt="Beautiful mountain landscape">
+        </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="section-heading" id="destinations">
+        <p class="small-heading">YOUR NEXT ADVENTURE STARTS HERE</p>
+        <h2>Nature has no borders.</h2>
+
+        <p>
+            Travel through the world's most beautiful natural
+            destinations and discover places worth remembering.
+        </p>
+    </section>
+
+    <!-- CONTINENT FILTERS -->
+    <section class="filter-section">
+        <h3>Explore by continent</h3>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Places</button>
+            <button class="filter-btn" data-filter="asia">Asia</button>
+            <button class="filter-btn" data-filter="europe">Europe</button>
+            <button class="filter-btn" data-filter="africa">Africa</button>
+            <button class="filter-btn" data-filter="north-america">North America</button>
+            <button class="filter-btn" data-filter="south-america">South America</button>
+            <button class="filter-btn" data-filter="oceania">Oceania</button>
+        </div>
+    </section>
+
+    <!-- NATURE CATEGORIES -->
+    <section class="category-section" id="categories">
+        <h2>Explore nature by category</h2>
+
+        <div class="category-grid">
+
+            <div class="category-card" data-category="mountains">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600" alt="Mountains">
+                <h3>Mountains</h3>
+            </div>
+
+            <div class="category-card" data-category="waterfalls">
+                <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=600" alt="Waterfalls">
+                <h3>Waterfalls</h3>
+            </div>
+
+            <div class="category-card" data-category="forests">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600" alt="Forests">
+                <h3>Forests</h3>
+            </div>
+
+            <div class="category-card" data-category="oceans">
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600" alt="Oceans">
+                <h3>Oceans</h3>
+            </div>
+
+            <div class="category-card" data-category="deserts">
+                <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600" alt="Deserts">
+                <h3>Deserts</h3>
+            </div>
+
+            <div class="category-card" data-category="lakes">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600" alt="Lakes">
+                <h3>Lakes</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DESTINATION GALLERY -->
+    <section class="destination-section">
+
+        <div class="destination-heading">
+            <div>
+                <p class="small-heading">THE WORLD COLLECTION</p>
+                <h2>Beautiful places to discover.</h2>
+            </div>
+        </div>
+
+        <div class="editorial-gallery">
+
+            <div class="gallery-top">
+                <span>THE WORLD, IN FRAMES</span>
+                <span id="result-count">24 DESTINATIONS</span>
+            </div>
+
+            <div class="landscape-filters">
+                <button class="category-filter" data-category="all">All</button>
+                <button class="category-filter" data-category="mountains">Mountains</button>
+                <button class="category-filter" data-category="waterfalls">Waterfalls</button>
+                <button class="category-filter" data-category="forests">Forests</button>
+                <button class="category-filter" data-category="oceans">Oceans</button>
+                <button class="category-filter" data-category="deserts">Deserts</button>
+                <button class="category-filter" data-category="lakes">Lakes</button>
+            </div>
+
+            <div class="collage-container">
+                <button class="carousel-arrow" id="carouselPrev">←</button>
+
+                <div class="collage-stage" id="collageStage"></div>
+
+                <button class="carousel-arrow" id="carouselNext">→</button>
+            </div>
+
+            <div class="gallery-caption">
+                <h2 id="currentTitle">Explore Nature</h2>
+                <p id="currentLocation">Discover beautiful places around the world</p>
+                <span id="slideNumber">01 / 24</span>
+            </div>
+
+            <p class="gallery-hint">
+                USE ARROWS TO EXPLORE · CLICK THE MAIN IMAGE TO VIEW
+            </p>
+
+        </div>
+
+        <!-- ORIGINAL DESTINATION CARDS: USED BY JAVASCRIPT -->
+        <div class="gallery" id="gallery">
+
+            <!-- ASIA -->
+
+            <div class="destination-card" data-continent="asia" data-category="mountains" data-name="Mount Fuji" data-location="Honshu, Japan">
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=900" alt="Mount Fuji">
+                <div class="card-info">
+                    <span>ASIA · MOUNTAINS</span>
+                    <h3>Mount Fuji</h3>
+                    <p>📍 Honshu, Japan</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="asia" data-category="forests" data-name="Arashiyama" data-location="Kyoto, Japan">
+                <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=900" alt="Japanese nature">
+                <div class="card-info">
+                    <span>ASIA · FORESTS</span>
+                    <h3>Arashiyama</h3>
+                    <p>📍 Kyoto, Japan</p>
+                </div>
+            </div>
+
+            <!-- EUROPE -->
+
+            <div class="destination-card" data-continent="europe" data-category="lakes" data-name="Lake Bled" data-location="Slovenia">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=900" alt="Lake Bled">
+                <div class="card-info">
+                    <span>EUROPE · LAKES</span>
+                    <h3>Lake Bled</h3>
+                    <p>📍 Slovenia</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="europe" data-category="waterfalls" data-name="Skogafoss" data-location="Iceland">
+                <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=900" alt="Waterfall">
+                <div class="card-info">
+                    <span>EUROPE · WATERFALLS</span>
+                    <h3>Skogafoss</h3>
+                    <p>📍 Iceland</p>
+                </div>
+            </div>
+
+            <!-- AFRICA -->
+
+            <div class="destination-card" data-continent="africa" data-category="deserts" data-name="Sahara Desert" data-location="Morocco">
+                <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=900" alt="Sahara Desert">
+                <div class="card-info">
+                    <span>AFRICA · DESERTS</span>
+                    <h3>Sahara Desert</h3>
+                    <p>📍 Morocco</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="africa" data-category="waterfalls" data-name="Victoria Falls" data-location="Zambia and Zimbabwe">
+                <img src="https://media.timeout.com/images/106032817/1536/1152/image.jpg" alt="Victoria Falls">
+                <div class="card-info">
+                    <span>AFRICA · WATERFALLS</span>
+                    <h3>Victoria Falls</h3>
+                    <p>📍 Zambia &amp; Zimbabwe</p>
+                </div>
+            </div>
+
+            <!-- NORTH AMERICA -->
+
+            <div class="destination-card" data-continent="north-america" data-category="lakes" data-name="Moraine Lake" data-location="Alberta, Canada">
+                <img src="images/moraine-lake.jpg"
+                     alt="Moraine Lake, Banff National Park, Alberta, Canada">
+                <div class="card-info">
+                    <span>NORTH AMERICA · LAKES</span>
+                    <h3>Moraine Lake</h3>
+                    <p>📍 Alberta, Canada</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="north-america" data-category="deserts" data-name="Grand Canyon" data-location="Arizona, USA">
+                <img src="https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?w=900" alt="Grand Canyon">
+                <div class="card-info">
+                    <span>NORTH AMERICA · DESERTS</span>
+                    <h3>Grand Canyon</h3>
+                    <p>📍 Arizona, USA</p>
+                </div>
+            </div>
+
+            <!-- SOUTH AMERICA -->
+
+            <div class="destination-card" data-continent="south-america" data-category="forests" data-name="Amazon Rainforest" data-location="Brazil">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900" alt="Amazon Rainforest">
+                <div class="card-info">
+                    <span>SOUTH AMERICA · FORESTS</span>
+                    <h3>Amazon Rainforest</h3>
+                    <p>📍 Brazil</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="south-america" data-category="mountains" data-name="Patagonia" data-location="Argentina">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900" alt="Patagonia">
+                <div class="card-info">
+                    <span>SOUTH AMERICA · MOUNTAINS</span>
+                    <h3>Patagonia</h3>
+                    <p>📍 Argentina</p>
+                </div>
+            </div>
+
+            <!-- OCEANIA -->
+
+            <div class="destination-card" data-continent="oceania" data-category="oceans" data-name="Milford Sound" data-location="New Zealand">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900" alt="New Zealand landscape">
+                <div class="card-info">
+                    <span>OCEANIA · OCEANS</span>
+                    <h3>Milford Sound</h3>
+                    <p>📍 New Zealand</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="oceania" data-category="oceans" data-name="Great Barrier Reef" data-location="Australia">
+                <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=900" alt="Coral reef">
+                <div class="card-info">
+                    <span>OCEANIA · OCEANS</span>
+                    <h3>Great Barrier Reef</h3>
+                    <p>📍 Australia</p>
+                </div>
+            </div>
+
+            <!-- ASIA -->
+
+            <div class="destination-card" data-continent="asia" data-category="oceans" data-name="Ha Long Bay" data-location="Vietnam">
+                <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=900" alt="Ha Long Bay">
+                <div class="card-info">
+                    <span>ASIA · OCEANS</span>
+                    <h3>Ha Long Bay</h3>
+                    <p>📍 Vietnam</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="asia" data-category="forests" data-name="Bali Rice Terraces" data-location="Indonesia">
+                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900" alt="Bali landscape">
+                <div class="card-info">
+                    <span>ASIA · FORESTS</span>
+                    <h3>Bali Rice Terraces</h3>
+                    <p>📍 Indonesia</p>
+                </div>
+            </div>
+
+            <!-- EUROPE -->
+
+            <div class="destination-card" data-continent="europe" data-category="mountains" data-name="Dolomites" data-location="Italy">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900" alt="Mountain landscape">
+                <div class="card-info">
+                    <span>EUROPE · MOUNTAINS</span>
+                    <h3>Dolomites</h3>
+                    <p>📍 Italy</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="europe" data-category="waterfalls" data-name="Plitvice Lakes" data-location="Croatia">
+                <img src="https://cdn-imgix.headout.com/media/images/feb21ff6-5dac-4cbc-ab6a-7ee7314e31bb-1749377927638-282495.jpg?ar=16%3A10&auto=compress%2Cformat&fit=crop&h=760&q=80&w=1216" alt="Plitvice Lakes">
+                <div class="card-info">
+                    <span>EUROPE · WATERFALLS</span>
+                    <h3>Plitvice Lakes</h3>
+                    <p>📍 Croatia</p>
+                </div>
+            </div>
+
+            <!-- AFRICA -->
+
+            <div class="destination-card" data-continent="africa" data-category="forests" data-name="Serengeti" data-location="Tanzania">
+                <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=900" alt="African wilderness">
+                <div class="card-info">
+                    <span>AFRICA · WILDLIFE</span>
+                    <h3>Serengeti</h3>
+                    <p>📍 Tanzania</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="africa" data-category="mountains" data-name="Mount Kilimanjaro" data-location="Tanzania">
+                <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202510/mount-kilimanjaro-photo-wikipedia-265525640-16x9.png?VersionId=dV9VYdlDxYZZt7_Yj4ZwBuV8lPwJYo8U" alt="Mount Kilimanjaro">
+                <div class="card-info">
+                    <span>AFRICA · MOUNTAINS</span>
+                    <h3>Mount Kilimanjaro</h3>
+                    <p>📍 Tanzania</p>
+                </div>
+            </div>
+
+            <!-- NORTH AMERICA -->
+
+            <div class="destination-card" data-continent="north-america" data-category="waterfalls" data-name="Yosemite" data-location="California, USA">
+                <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=900" alt="Yosemite nature">
+                <div class="card-info">
+                    <span>NORTH AMERICA · WATERFALLS</span>
+                    <h3>Yosemite</h3>
+                    <p>📍 California, USA</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="north-america" data-category="deserts" data-name="Antelope Canyon" data-location="Arizona, USA">
+                <img src="https://media.cntraveler.com/photos/5ad79dd2a4034c61525d8a2f/master/w_1024%2Cc_limit/Antelope-Canyon-GettyImages-162813219.jpg" alt="Antelope Canyon">
+                <div class="card-info">
+                    <span>NORTH AMERICA · DESERTS</span>
+                    <h3>Antelope Canyon</h3>
+                    <p>📍 Arizona, USA</p>
+                </div>
+            </div>
+
+            <!-- SOUTH AMERICA -->
+
+            <div class="destination-card" data-continent="south-america" data-category="waterfalls" data-name="Iguazu Falls" data-location="Argentina and Brazil">
+                <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=900" alt="Iguazu Falls">
+                <div class="card-info">
+                    <span>SOUTH AMERICA · WATERFALLS</span>
+                    <h3>Iguazu Falls</h3>
+                    <p>📍 Argentina &amp; Brazil</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="south-america" data-category="deserts" data-name="Salar de Uyuni" data-location="Bolivia">
+                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=900" alt="Salar de Uyuni">
+                <div class="card-info">
+                    <span>SOUTH AMERICA · DESERTS</span>
+                    <h3>Salar de Uyuni</h3>
+                    <p>📍 Bolivia</p>
+                </div>
+            </div>
+
+            <!-- OCEANIA -->
+
+            <div class="destination-card" data-continent="oceania" data-category="lakes" data-name="Lake Tekapo" data-location="New Zealand">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=900" alt="Lake Tekapo">
+                <div class="card-info">
+                    <span>OCEANIA · LAKES</span>
+                    <h3>Lake Tekapo</h3>
+                    <p>📍 New Zealand</p>
+                </div>
+            </div>
+
+            <div class="destination-card" data-continent="oceania" data-category="oceans" data-name="Whitehaven Beach" data-location="Australia">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900" alt="Tropical beach">
+                <div class="card-info">
+                    <span>OCEANIA · OCEANS</span>
+                    <h3>Whitehaven Beach</h3>
+                    <p>📍 Australia</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+
+        <button class="close-btn" id="closeBtn">×</button>
+        <button class="prev-btn" id="prevBtn">❮</button>
+
+        <div class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <h2 id="lightbox-title"></h2>
+            <p id="lightbox-location"></p>
+        </div>
+
+        <button class="next-btn" id="nextBtn">❯</button>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>WILD<span>EARTH.</span></h2>
+        <p>Discover nature. Respect the planet. Explore the world.</p>
+        <p>© 2026 WILD EARTH | ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

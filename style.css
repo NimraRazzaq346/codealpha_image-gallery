@@ -1,0 +1,732 @@
+/* =========================================
+   WILD EARTH – LAVENDER EDITORIAL DESIGN
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #dcc0f3;
+    color: #30243a;
+    font-family: 'DM Sans', sans-serif;
+    padding: 25px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #dcc0f3;
+    padding: 22px 5%;
+    border-bottom: 1px solid #8d72a4;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #30243a;
+}
+
+.logo span {
+    color: #75518e;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 32px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #30243a;
+    font-size: 17px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.navbar nav a:hover {
+    color: #8054a0;
+}
+
+.nav-text {
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #604276;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 75px 7%;
+    background: #dcc0f3;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.small-heading {
+    color: #75518e;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 7vw, 78px);
+    line-height: 1.15;
+    color: #30243a;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #8054a0;
+    font-style: italic;
+}
+
+.hero-description {
+    font-size: 19px;
+    color: #574564;
+    line-height: 1.9;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.explore-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #604276;
+    color: white;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.explore-btn:hover {
+    background: #30243a;
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    width: 85%;
+    max-width: 1000px;
+    height: 390px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.section-heading {
+    text-align: center;
+    padding: 65px 7%;
+    background: #dcc0f3;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 43px;
+    color: #30243a;
+    margin-bottom: 15px;
+}
+
+.section-heading p:not(.small-heading) {
+    font-size: 18px;
+    color: #574564;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* =========================================
+   CONTINENT FILTERS
+========================================= */
+
+.filter-section {
+    background: #dcc0f3;
+    padding: 35px 5%;
+    text-align: center;
+}
+
+.filter-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin-bottom: 20px;
+    color: #30243a;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-btn,
+.category-filter {
+    border: 1px solid #806795;
+    background: transparent;
+    color: #30243a;
+    padding: 11px 21px;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active,
+.category-filter:hover,
+.category-filter.active {
+    background: #604276;
+    color: white;
+    border-color: #604276;
+}
+
+/* =========================================
+   NATURE CATEGORIES
+========================================= */
+
+.category-section {
+    background: #dcc0f3;
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.category-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 35px;
+    color: #30243a;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.category-card {
+    overflow: hidden;
+    border-radius: 12px;
+    background: #c9a9e5;
+    box-shadow: 0 8px 20px #30243a18;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px #30243a30;
+}
+
+.category-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.category-card h3 {
+    padding: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #30243a;
+}
+
+/* =========================================
+   DESTINATION SECTION
+========================================= */
+
+.destination-section {
+    background: #dcc0f3;
+    padding: 50px 5%;
+    min-height: 650px;
+}
+
+.destination-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.destination-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #30243a;
+}
+
+/* Hide original cards because JavaScript
+   uses them as image sources */
+
+.gallery {
+    display: none;
+}
+
+/* =========================================
+   EDITORIAL GALLERY
+========================================= */
+
+.editorial-gallery {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #604276;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   CATEGORY FILTERS
+========================================= */
+
+.landscape-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+/* =========================================
+   COLLAGE
+========================================= */
+
+.collage-container {
+    height: 550px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.collage-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Individual photos */
+
+.collage-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 230px;
+    height: 310px;
+    padding: 6px;
+    border: 0;
+    background: #604276;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 30px #30243a35;
+    transition: all .65s ease;
+}
+
+.collage-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+}
+
+.collage-card:hover img {
+    transform: scale(1.06);
+}
+
+/* =========================================
+   IMAGE POSITIONS
+========================================= */
+
+.pos-center {
+    z-index: 5;
+    width: 300px;
+    height: 390px;
+    transform: translate(-50%, -50%);
+}
+
+.pos-left {
+    z-index: 4;
+    transform: translate(-125%, -45%) rotate(-5deg);
+}
+
+.pos-right {
+    z-index: 4;
+    transform: translate(25%, -50%) rotate(5deg);
+}
+
+.pos-far-left {
+    z-index: 2;
+    transform: translate(-205%, -40%) rotate(-8deg) scale(.85);
+    opacity: .85;
+}
+
+.pos-far-right {
+    z-index: 2;
+    transform: translate(105%, -42%) rotate(8deg) scale(.85);
+    opacity: .85;
+}
+
+/* =========================================
+   CAROUSEL ARROWS
+========================================= */
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #604276;
+    border-radius: 50%;
+    background: #dcc0f3;
+    color: #30243a;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.carousel-arrow:hover {
+    background: #604276;
+    color: white;
+}
+
+#carouselPrev {
+    left: 0;
+}
+
+#carouselNext {
+    right: 0;
+}
+
+/* =========================================
+   GALLERY CAPTION
+========================================= */
+
+.gallery-caption {
+    position: relative;
+    text-align: center;
+    border-top: 1px solid #80679566;
+    padding: 28px 70px 15px;
+}
+
+.gallery-caption h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #30243a;
+}
+
+.gallery-caption p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 19px;
+    margin-top: 7px;
+    color: #604276;
+}
+
+#slideNumber {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #604276;
+}
+
+.gallery-hint {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    color: #604276;
+}
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.lightbox {
+    background: rgba(35, 23, 45, .97);
+}
+
+.lightbox-content img {
+    max-width: 85vw;
+    max-height: 70vh;
+    border: 5px solid #dcc0f3;
+}
+
+.lightbox-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.lightbox-content p {
+    color: #dcc0f3;
+    font-size: 18px;
+}
+
+.close-btn,
+.prev-btn,
+.next-btn {
+    border-color: #dcc0f3;
+    color: white;
+}
+
+.close-btn:hover,
+.prev-btn:hover,
+.next-btn:hover {
+    background: #dcc0f3;
+    color: #30243a;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #c9a9e5;
+    color: #30243a;
+    border-top: 1px solid #80679566;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+footer h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+footer span {
+    color: #75518e;
+}
+
+footer p {
+    color: #574564;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+    body {
+        padding: 15px;
+    }
+
+    .collage-container {
+        height: 440px;
+    }
+
+    .collage-card {
+        width: 165px;
+        height: 225px;
+    }
+
+    .pos-center {
+        width: 230px;
+        height: 300px;
+    }
+
+    .pos-left {
+        transform: translate(-115%, -45%) rotate(-5deg);
+    }
+
+    .pos-right {
+        transform: translate(15%, -50%) rotate(5deg);
+    }
+
+    .pos-far-left {
+        transform: translate(-155%, -40%) rotate(-8deg) scale(.8);
+    }
+
+    .pos-far-right {
+        transform: translate(55%, -42%) rotate(8deg) scale(.8);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+    }
+
+    .navbar {
+        justify-content: center;
+        padding: 20px 12px;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    .hero {
+        padding: 45px 5%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 260px;
+    }
+
+    .section-heading h2,
+    .destination-heading h2,
+    .category-section h2 {
+        font-size: 30px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card img {
+        height: 220px;
+    }
+
+    .destination-section {
+        padding: 30px 12px;
+        min-height: 480px;
+    }
+
+    .collage-container {
+        height: 330px;
+    }
+
+    .collage-card {
+        width: 105px;
+        height: 150px;
+    }
+
+    .pos-center {
+        width: 155px;
+        height: 215px;
+    }
+
+    .pos-left {
+        transform: translate(-105%, -45%) rotate(-5deg);
+    }
+
+    .pos-right {
+        transform: translate(5%, -50%) rotate(5deg);
+    }
+
+    .pos-far-left {
+        transform: translate(-140%, -40%) rotate(-8deg) scale(.75);
+    }
+
+    .pos-far-right {
+        transform: translate(40%, -42%) rotate(8deg) scale(.75);
+    }
+
+    .carousel-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+    }
+
+    .gallery-caption h2 {
+        font-size: 25px;
+    }
+
+    .gallery-caption p {
+        font-size: 16px;
+    }
+
+    .gallery-caption {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    #slideNumber {
+        position: static;
+        display: block;
+        margin-top: 8px;
+    }
+
+    .gallery-top {
+        font-size: 11px;
+    }
+
+    .gallery-hint {
+        font-size: 10px;
+    }
+}
