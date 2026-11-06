@@ -1,6 +1,6 @@
 # 🌍 WILD EARTH – Explore Nature
 ## 💻 Live Demo
-**[Explore WILD EARTH]((https://nimrarazzaq346.github.io/codealpha_image-gallery/))**
+**[Explore WILD EARTH](https://nimrarazzaq346.github.io/codealpha_image-gallery/)**
 
 
 **Explore the Planet. Discover Nature.**
